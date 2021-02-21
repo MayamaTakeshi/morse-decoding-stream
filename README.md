@@ -15,7 +15,9 @@ npm install morse-decoding-stream
 You can try the sample:
 ```
 $ node samples/i_love_you.js 
-I LOVE YOU
+
+morse   : .. / .-.. --- ...- . / -.-- --- ..-
+decoded : I / LOVE / YOU
 
 ```
 

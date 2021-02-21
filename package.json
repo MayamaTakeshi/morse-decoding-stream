@@ -1,6 +1,6 @@
 {
   "name": "morse-decoding-stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stream that decodes morse code from audio streams",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/MayamaTakeshi/morse-decoding-stream.git"
   },
-  "engines": {"node": "v12.19.0"},
+  "engines": {
+    "node": "v12.19.0"
+  },
   "keywords": [
     "morse",
     "decoding",
