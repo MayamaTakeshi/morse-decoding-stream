@@ -39,7 +39,7 @@ var acc_a = ""
 var acc_b = ""
  
 reader.on('format', function (format) {
-    console.log(format)
+    //console.log(format)
 
     const opts = {
         threshold: threshold,
@@ -63,7 +63,7 @@ reader.on('format', function (format) {
 
     mds.on("end", () => {
         console.log()
-        console.log(`morse   : ${acc_a}`)
+        //console.log(`morse   : ${acc_a}`)
         console.log(`decoded : ${acc_b}`)
     })
 
