@@ -1,6 +1,6 @@
 {
   "name": "morse-decoding-stream",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Stream that decodes morse code from audio streams",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,8 @@
   "license": "MIT",
   "devDependencies": {
     "morse-node": "^0.1.1",
-    "wav": "^1.0.2"
+    "wav": "^1.0.2",
+    "yargs": "^16.2.0"
   },
   "dependencies": {
     "signal-detection-stream": "^1.1.0"

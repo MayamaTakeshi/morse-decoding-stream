@@ -7,9 +7,9 @@ class MorseDecodingStream extends Writable {
 	constructor(format, opts) {
 		super()
 
-        this.dot_duration = opts.dot_duration
-        this.dash_duration = opts.dot_duration * 3
-        this.word_space_duration = opts.dot_duration * 7
+        this.dot_duration = opts.dotDuration
+        this.dash_duration = opts.dotDuration * 3
+        this.word_space_duration = opts.dotDuration * 7
 
 		this.eventEmitter = new EventEmitter()
 

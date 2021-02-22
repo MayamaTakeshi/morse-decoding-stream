@@ -18,7 +18,7 @@ reader.on('format', function (format) {
     const opts = {
         threshold: 0.1,
         numSamples: 10,
-        dot_duration: 65, 
+        dotDuration: 65, 
     }
 
     const mds = new MorseDecodingStream(format, opts)
@@ -26,7 +26,7 @@ reader.on('format', function (format) {
     mds.on("data", data => {
         if(data == '/') {
             acc_a += " / "
-            acc_b += " / "
+            acc_b += " "
         } else if(data == ' ') {
             acc_a += " "
         } else {
