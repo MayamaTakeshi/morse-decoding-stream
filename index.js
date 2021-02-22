@@ -52,7 +52,11 @@ class MorseDecodingStream extends Writable {
 	}
 
 	on(evt, cb) {
-		this.eventEmitter.on(evt, cb)
+        if(evt == 'data' || evt == 'end') {
+		    this.eventEmitter.on(evt, cb)
+        } else {
+            super.on(evt, cb)
+        }
 	}
 
 	_write(chunk, encoding, callback) {

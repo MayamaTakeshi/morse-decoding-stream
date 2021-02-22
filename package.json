@@ -1,6 +1,6 @@
 {
   "name": "morse-decoding-stream",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Stream that decodes morse code from audio streams",
   "main": "index.js",
   "scripts": {

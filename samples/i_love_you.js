@@ -41,14 +41,7 @@ reader.on('format', function (format) {
         console.log(`decoded : ${acc_b}`)
     })
 
-    reader.on('data', data => {
-        mds.write(data)
-    })
-
-    reader.on('end', () => {
-        //console.log(`reader end`)
-        mds.end()
-    })
+    reader.pipe(mds)
 })
 
 reader.on('error', error => {
