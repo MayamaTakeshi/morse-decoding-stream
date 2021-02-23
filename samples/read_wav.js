@@ -63,7 +63,7 @@ reader.on('format', function (format) {
 
     mds.on("end", () => {
         console.log()
-        //console.log(`morse   : ${acc_a}`)
+        console.log(`morse   : ${acc_a}`)
         console.log(`decoded : ${acc_b}`)
     })
 
