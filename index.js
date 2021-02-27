@@ -23,7 +23,7 @@ class MorseDecodingStream extends Writable {
             this.last_signal_time = new Date()
 
             if(data.end) {
-                console.log(`sds.on signal ${JSON.stringify(data)}`)
+                // console.log(`sds.on signal ${JSON.stringify(data)}`)
                 // process extinction
                 var diff = data.end - data.start
                 //console.log(`diff=${diff}`)
@@ -50,7 +50,6 @@ class MorseDecodingStream extends Writable {
                         this.eventEmitter.emit('data', ' ')
                     }
                 }
-                console.log(this.acc)
             }
         })
 
