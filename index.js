@@ -17,9 +17,13 @@ class MorseDecodingStream extends Writable {
 
         this.acc = []
 
+        this.last_signal_time = new Date()
+
         this.sds.on('signal', data => {
+            this.last_signal_time = new Date()
+
             if(data.end) {
-                //console.log(`sds.on signal ${JSON.stringify(data)}`)
+                console.log(`sds.on signal ${JSON.stringify(data)}`)
                 // process extinction
                 var diff = data.end - data.start
                 //console.log(`diff=${diff}`)
@@ -46,9 +50,19 @@ class MorseDecodingStream extends Writable {
                         this.eventEmitter.emit('data', ' ')
                     }
                 }
-                //console.log(this.acc)
+                console.log(this.acc)
             }
         })
+
+        this.timer_id = setInterval(() => {
+            var now = new Date()
+            var diff = now.getTime() - this.last_signal_time.getTime()
+            if(this.acc.length > 0 && diff > (this.word_space_duration * 2)) {
+                // flush acc
+                this.eventEmitter.emit('data', this.acc.join(""))
+                this.acc = []
+            }
+        }, 100)
 	}
 
 	on(evt, cb) {
@@ -68,6 +82,11 @@ class MorseDecodingStream extends Writable {
         if(this.acc.length > 0) {
             this.eventEmitter.emit('data', this.acc.join(""))
         }
+
+        if(this.timer_id) {
+            clearInterval(this.timer_id)
+        }
+
         this.eventEmitter.emit('end')
     }
 }
